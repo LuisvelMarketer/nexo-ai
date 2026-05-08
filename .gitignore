@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+*.pot
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Node / React Native
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+.yarn/
+.pnpm-store/
+dist/
+.next/
+out/
+build/
+
+# React
+*.log
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Production
+*.pid
+*.seed
