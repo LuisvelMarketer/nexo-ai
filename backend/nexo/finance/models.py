@@ -24,7 +24,9 @@ class Transaction(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
-        related_name='transactions'
+        related_name='transactions',
+        null=True,
+        blank=True
     )
     type = models.CharField(max_length=10, choices=TYPE_CHOICES)
     amount = models.DecimalField(max_digits=10, decimal_places=2)

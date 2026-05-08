@@ -50,7 +50,7 @@ def extract_category(text):
     return 'other'
 
 
-def call_deepseek(user_message, context=None):
+def call_llm(user_message, context=None):
     system_prompt = """Eres NEXO, un asistente de IA personal en el celular. Respondes en JSON.
 
 Tus capacidades:
@@ -78,13 +78,13 @@ Responde SOLO con JSON válido, sin markdown:
 
     try:
         response = requests.post(
-            f"{settings.DEEPSEEK_BASE_URL}/chat/completions",
+            "https://api.groq.com/openai/v1/chat/completions",
             headers={
-                "Authorization": f"Bearer {settings.DEEPSEEK_API_KEY}",
+                "Authorization": f"Bearer {settings.GROQ_API_KEY}",
                 "Content-Type": "application/json"
             },
             json={
-                "model": settings.DEEPSEEK_MODEL,
+                "model": settings.GROQ_MODEL,
                 "messages": [
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_message}
@@ -123,7 +123,7 @@ def nexo_chat(request):
         direction='in'
     )
 
-    result = call_deepseek(user_message)
+    result = call_llm(user_message)
 
     action = result.get('action', 'general')
     params = result.get('params', {})

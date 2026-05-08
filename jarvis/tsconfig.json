@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "NEXO JARVIS",
+    "slug": "nexo-jarvis",
+    "version": "1.0.0"
+  },
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "extends": "expo/tsconfig.base"
+}

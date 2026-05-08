@@ -1,0 +1,74 @@
+{
+  "name": "NEXO-JARVIS",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/App.tsx",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "expo": "~52.0.0",
+    "expo-status-bar": "~2.0.0",
+    "react": "18.3.1",
+    "react-native": "0.76.5",
+    "@react-navigation/native": "^7.0.0",
+    "@react-navigation/bottom-tabs": "^7.0.0",
+    "react-native-screens": "~4.4.0",
+    "react-native-safe-area-context": "~4.14.0",
+    "zustand": "^4.5.0",
+    "axios": "^1.7.4",
+    "expo-speech": "~13.0.0",
+    "expo-av": "~15.0.0",
+    "expo-linear-gradient": "~14.0.0",
+    "lucide-react-native": "^0.400.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.0",
+    "@types/react": "~18.3.0",
+    "typescript": "~5.3.0"
+  },
+  "expo": {
+    "name": "NEXO JARVIS",
+    "slug": "nexo-jarvis",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0A0A0F"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "ai.nexo.jarvis",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "NEXO needs microphone access to listen to your voice commands.",
+        "NSSpeechRecognitionUsageDescription": "NEXO uses speech recognition to understand your voice.",
+        "UIBackgroundModes": ["audio", "fetch", "processing"]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0A0A0F"
+      },
+      "package": "ai.nexo.jarvis",
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.INTERNET"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-av",
+        {
+          "microphonePermission": "NEXO needs access to your microphone to listen to voice commands."
+        }
+      ]
+    ]
+  }
+}

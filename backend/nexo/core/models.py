@@ -6,7 +6,9 @@ class Conversation(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
-        related_name='conversations'
+        related_name='conversations',
+        null=True,
+        blank=True
     )
     message = models.TextField()
     direction = models.CharField(max_length=10, choices=[('in', 'Input'), ('out', 'Output')])
