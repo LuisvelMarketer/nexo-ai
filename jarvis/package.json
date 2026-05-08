@@ -2,7 +2,7 @@
   "name": "NEXO-JARVIS",
   "version": "1.0.0",
   "private": true,
-  "main": "src/App.tsx",
+  "main": "expo-router/entry",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -10,20 +10,25 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-navigation/bottom-tabs": "^7.0.0",
+    "@react-navigation/native": "^7.0.0",
+    "axios": "^1.7.4",
     "expo": "~52.0.0",
+    "expo-asset": "^55.0.17",
+    "expo-av": "~15.0.0",
+    "expo-constants": "~17.0.0",
+    "expo-file-system": "~18.0.0",
+    "expo-linking": "~7.0.0",
+    "expo-linear-gradient": "~14.0.0",
+    "expo-router": "~4.0.0",
+    "expo-speech": "~13.0.0",
     "expo-status-bar": "~2.0.0",
+    "lucide-react-native": "^0.400.0",
     "react": "18.3.1",
     "react-native": "0.76.5",
-    "@react-navigation/native": "^7.0.0",
-    "@react-navigation/bottom-tabs": "^7.0.0",
-    "react-native-screens": "~4.4.0",
     "react-native-safe-area-context": "~4.14.0",
-    "zustand": "^4.5.0",
-    "axios": "^1.7.4",
-    "expo-speech": "~13.0.0",
-    "expo-av": "~15.0.0",
-    "expo-linear-gradient": "~14.0.0",
-    "lucide-react-native": "^0.400.0"
+    "react-native-screens": "~4.4.0",
+    "zustand": "^4.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.0",
@@ -33,6 +38,7 @@
   "expo": {
     "name": "NEXO JARVIS",
     "slug": "nexo-jarvis",
+    "scheme": "nexo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -63,6 +69,7 @@
       ]
     },
     "plugins": [
+      "expo-router",
       [
         "expo-av",
         {
